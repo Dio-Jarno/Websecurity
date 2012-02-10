@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 * It takes the statement from the "do" parameter and pass on to an action.
 * 
 * @author Arvid Grunenberg
+* @author Thomas Habiger
 * @date 08.01.2012
 * @version 0.1
 */
