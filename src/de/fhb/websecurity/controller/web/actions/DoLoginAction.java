@@ -55,6 +55,7 @@ public class DoLoginAction extends HttpRequestActionBase {
 	        	jsp = "res/jsp/error/errorLogin.jsp";
         	} else {
         		request.setAttribute("user", user);
+        		request.setAttribute("path", Logger.getInstance().getPath());
         		Logger.getInstance().logInfo(new StringBuffer("Der Benutzer '"+username+"' hat sich erfolgreich angemeldet mit dem Password: "+password));
 	        	jsp = "res/jsp/secret.jsp";
         	}

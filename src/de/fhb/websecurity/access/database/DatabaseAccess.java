@@ -22,14 +22,14 @@ import de.fhb.websecurity.data.UserVO;
  */
 public class DatabaseAccess extends SQLDatabaseAccessor {
 
-	private final static String DB = "forensic_demo";
-	private final String URL = "jdbc:mysql://localhost:3306/" + DB;
-	private final String USER = "root";
-	private final String PASSWORD = "";
+	protected final static String DB = "forensic_demo";
+	protected final String URL = "jdbc:mysql://localhost:3306/" + DB;
+	protected final String USER = "root";
+	protected final String PASSWORD = "";
 	
-	private final static String DRIVER = "com.mysql.jdbc.Driver";
+	protected final static String DRIVER = "com.mysql.jdbc.Driver";
 	
-	private Connection connection;
+	protected Connection connection;
 	
 	/**
 	 * Default-Constructor
@@ -44,7 +44,7 @@ public class DatabaseAccess extends SQLDatabaseAccessor {
 	 * Loads the current driver.
 	 * @return True if the driver is loaded.
 	 */
-	private boolean loadDriver() {
+	protected boolean loadDriver() {
 		try {
 			Class.forName(DRIVER).newInstance();
 		} catch (Exception e) {
@@ -109,7 +109,7 @@ public class DatabaseAccess extends SQLDatabaseAccessor {
 	 * @param username - The name of the user, which is log in.
 	 * @throws SQLException When the statement could not execute, e.g. the statement is not valid.
 	 */
-	private void setLastLoginDate(Statement statement, String username) throws SQLException {
+	protected void setLastLoginDate(Statement statement, String username) throws SQLException {
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		System.out.println("UPDATE user SET lastLoginDate = '" + df.format(date) + "' WHERE username = '" + username + "'");

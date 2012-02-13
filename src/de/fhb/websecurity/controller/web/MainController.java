@@ -6,7 +6,10 @@ import de.fhb.websecurity.commons.web.HttpServletControllerBase;
 import de.fhb.websecurity.controller.web.actions.DoLoginAction;
 import de.fhb.websecurity.controller.web.actions.DoLogoutAction;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 
 import javax.servlet.ServletConfig;

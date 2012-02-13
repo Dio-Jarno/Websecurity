@@ -15,8 +15,4 @@
     <servlet-name>MainController</servlet-name>
     <url-pattern>/index</url-pattern>
   </servlet-mapping>
-  <login-config>
-    <auth-method>BASIC</auth-method>
-    <realm-name>secret</realm-name>
-  </login-config>
 </web-app>

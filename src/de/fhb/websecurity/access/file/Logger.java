@@ -15,12 +15,13 @@ import aglib.dataaccess.file.FileAccessor;
  */
 public class Logger extends FileAccessor {
 	
-	private final String PATH = "/users/Arvid/Documents/workspace/Websecurity/WebContent/res/log/log.txt";
+	protected static String path;
 	protected static Logger instance;
 	
 	
-	private Logger() {
+	protected Logger() {
 		super();
+		path = System.getProperty("user.dir") + "/log.txt";
 	}
 	
 	/**
@@ -39,13 +40,17 @@ public class Logger extends FileAccessor {
 	 * @param message - The message, which should be inside the log entry.
 	 */
 	private void log(StringBuffer message) {
-		Date date = new Date(System.currentTimeMillis());
-		SimpleDateFormat df = new SimpleDateFormat("E dd.MM.yyyy - k:m:s z");
-		message.append(" (");
-		message.append(df.format(date));
-		message.append(")");
-		System.out.println(message);
-		this.saveTextFile(PATH, message.toString());
+		if (path != null) {
+			Date date = new Date(System.currentTimeMillis());
+			SimpleDateFormat df = new SimpleDateFormat("E dd.MM.yyyy - k:m:s z");
+			message.append(" (");
+			message.append(df.format(date));
+			message.append(")");
+			System.out.println(message);
+			this.saveTextFile(path, message.toString());
+		} else {
+			System.out.println("ERROR: Your Logger is not initialized!");
+		}
 	}
 	
 	/**
@@ -73,6 +78,10 @@ public class Logger extends FileAccessor {
 	 */
 	public void logError(StringBuffer message) {
 		log(message.insert(0, "ERROR: "));
+	}
+	
+	public String getPath() {
+		return path;
 	}
 
 }

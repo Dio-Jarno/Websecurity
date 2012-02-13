@@ -44,7 +44,7 @@
 				</li>
 				<c:if test="${user.role == 'admin'}">
 				<li>
-					<p><a href="res/log/log.txt" target="_blank">Log</a></p>
+					<p><a href="file://${path}" target="_blank">Log</a></p>
 				</li>
 				</c:if>
 			</ul>
