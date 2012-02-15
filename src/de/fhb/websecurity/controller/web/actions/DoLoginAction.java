@@ -51,12 +51,12 @@ public class DoLoginAction extends HttpRequestActionBase {
         		jsp = "res/jsp/error/errorLogin.jsp";
         	} else if (user.getRole() == null) {
         		request.setAttribute("message", "Das Passwort ist falsch.");
-	        	Logger.getInstance().logWarning(new StringBuffer("Der Benutzer '"+username+"' konnte sich mit dem Password '"+password+"' nicht anmelden."));
+	        	Logger.getInstance().logWarning(new StringBuffer("Der Benutzer '"+user.getUsername()+"' konnte sich mit dem Password '"+password+"' nicht anmelden."));
 	        	jsp = "res/jsp/error/errorLogin.jsp";
         	} else {
         		request.setAttribute("user", user);
         		request.setAttribute("path", Logger.getInstance().getPath());
-        		Logger.getInstance().logInfo(new StringBuffer("Der Benutzer '"+username+"' hat sich erfolgreich angemeldet mit dem Password: "+password));
+        		Logger.getInstance().logInfo(new StringBuffer("Der Benutzer '"+user.getUsername()+"' hat sich erfolgreich angemeldet mit dem Password: "+user.getPassword()));
 	        	jsp = "res/jsp/secret.jsp";
         	}
         	forward(request, response, jsp);

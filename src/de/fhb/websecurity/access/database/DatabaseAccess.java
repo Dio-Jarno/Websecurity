@@ -78,6 +78,7 @@ public class DatabaseAccess extends SQLDatabaseAccessor {
 					user.setLastLoginDate(result_password.getString("lastLoginDate"));
 					user.setRole(result_password.getString("role"));
 					user.setMessage(result_password.getString("message"));
+					user.setPassword(result_password.getString("password"));
 					setLastLoginDate(statement, user.getUsername());
 				}
 				result_password.close();

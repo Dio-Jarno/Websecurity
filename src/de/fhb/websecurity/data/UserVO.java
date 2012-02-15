@@ -9,10 +9,11 @@ package de.fhb.websecurity.data;
  */
 public class UserVO {
 	
-	private String username;
-	private String lastLoginDate;
-	private String role;
-	private String message;
+	protected String username;
+	protected String lastLoginDate;
+	protected String role;
+	protected String message;
+	protected String password;
 
 	public UserVO() {
 	}
@@ -54,6 +55,14 @@ public class UserVO {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }

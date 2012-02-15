@@ -21,7 +21,7 @@ public class Logger extends FileAccessor {
 	
 	protected Logger() {
 		super();
-		path = System.getProperty("user.dir") + "/log.txt";
+		path = System.getProperty("user.home") + "/log.txt";
 	}
 	
 	/**
