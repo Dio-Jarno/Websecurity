@@ -25,7 +25,7 @@ public class DatabaseAccess extends SQLDatabaseAccessor {
 	protected final static String DB = "forensic_demo";
 	protected final String URL = "jdbc:mysql://localhost:3306/" + DB;
 	protected final String USER = "root";
-	protected final String PASSWORD = "";
+	protected final String PASSWORD = "fhb_forensik";
 	
 	protected final static String DRIVER = "com.mysql.jdbc.Driver";
 	
